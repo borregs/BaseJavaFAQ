@@ -11,18 +11,21 @@
 
 import java.util.Scanner; 
 //libreria para leer desde STDIN (teclado)
-
+	
 public class RegistroParalelo {
 
 
-	public int NE=1;
-	private int	nc[NE]={0}; 
-	private String alumNames[NE]={" "};
-	private int aluMaterias[NE]={" "};
-	private float califs[NE][3]={0.0,0.0};
-	
+
 	public static void main (String[] args) {
-		Scanner reader = new scanner(System.in);
+
+		int NE = 1;
+		int[] nc={0}; 
+		String[] alumNames={""};
+		String[][] matNames={{""}};
+		int[] aluMaterias={0};
+		double[][] califs={};
+	
+		Scanner reader = new Scanner(System.in);
 		
 		System.out.print("Ingrese la cantidad de alumnos:");
 		NE = reader.nextInt();
@@ -32,14 +35,30 @@ public class RegistroParalelo {
 			nc[x]=x;
 			
 			System.out.print("Ingrese el Nombre del alumno #" + x+1);
-			String alumNames[x] = reader.next();
+			alumNames[x] = reader.next();
 			
-			System.out.print("Ingrese la cantidad de materias que cursa "+ alumNames[x] +" Actualmente";
-			String aluMaterias[x] = reader.nextInt();
+			System.out.print("Ingrese la cantidad de materias que cursa "+ alumNames[x] +" Actualmente");
+			aluMaterias[x] = reader.nextInt();
 			
+			for(int y=0;y<aluMaterias[x];y++){
+				System.out.print("Ingrese el nombre de la materia #"+ y+1 +" de " + alumNames[x]);
+				matNames[x][y]=reader.next();
+				
+			
+				for(int j=0;j<3;j++){				
+					System.out.print("Ingrese la Calificacion #"+ j+1 +" de " + matNames[y]);
+					califs[x][j] = reader.nextInt();
+					}
+			}
 			
 		}
 		
+		System.out.println("ID    Nombre       Materias   Prom");
+		System.out.println("----  ----------  ----------  -----");
+		
+				for(int x=0;x<NE;x++){
+
+				}
 		
 		
 		
