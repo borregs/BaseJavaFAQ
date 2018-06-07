@@ -46,7 +46,7 @@ public class RegistroParalelo {
 				
 			
 				for(int j=0;j<3;j++){				
-					System.out.print("Ingrese la Calificacion #"+ j+1 +" de " + matNames[y]);
+					System.out.print("Ingrese la Calificacion #"+ j+1 +" de " + matNames[x][y]);
 					califs[x][j] = reader.nextInt();
 					}
 			}
